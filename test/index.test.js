@@ -19,3 +19,9 @@ test( 'Using /n and , as delimiter', ()=>{
 test( 'Use of custom delimiter', ()=>{
     expect(add("//;\n1;2")).toBe(3)
 })
+
+test( 'Throw error in case of negative numbers', ()=>{
+    expect(()=>add("-1,-2,3,4")).toThrowError(
+        'negative numbers not allowed: -1,-2'
+      );
+}) 

@@ -11,10 +11,22 @@ function add (input){
     }
 
     let arr=input.split(delimiter);
+    let negativeNos=[];
   
     arr.forEach(element => {
+        if( +element<0){
+            negativeNos.push(+element);
+        }
+        else 
         sum+=+element;
     });
+
+    if(negativeNos.length>0)
+    {
+        throw new Error(
+            `negative numbers not allowed: ${negativeNos.join(",")}`
+        );
+    }
 
     return sum;
 
@@ -24,6 +36,8 @@ function add (input){
 function escapeRegex(delimiter) {
     return delimiter.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
 }
+
+add('3,4')
 
 
 module.exports = { add }
