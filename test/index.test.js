@@ -11,3 +11,7 @@ test('empty string returns 0', () => {
 test('1', () => {
     expect(add('1')).toBe(1);
 });
+
+test( 'Using /n and , as delimiter', ()=>{
+    expect(add("1\n2,3")).toBe(6)
+})
