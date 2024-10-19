@@ -24,4 +24,10 @@ test( 'Throw error in case of negative numbers', ()=>{
     expect(()=>add("-1,-2,3,4")).toThrowError(
         'negative numbers not allowed: -1,-2'
       );
-}) 
+})
+
+test( 'Throw error in case of negative numbers', ()=>{
+    expect(()=>add("-1,3,4")).toThrowError(
+        'negative numbers not allowed: -1'
+      );
+})
