@@ -17,7 +17,7 @@ function add (input){
         if( +element<0){
             negativeNos.push(+element);
         }
-        else 
+        else if(+element<=1000)
         sum+=+element;
     });
 

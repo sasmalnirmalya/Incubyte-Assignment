@@ -26,8 +26,12 @@ test( 'Throw error in case of negative numbers', ()=>{
       );
 })
 
-test( 'Throw error in case of negative numbers', ()=>{
+test( 'Throw error in case of single negative number', ()=>{
     expect(()=>add("-1,3,4")).toThrowError(
         'negative numbers not allowed: -1'
       );
+})
+
+test( 'Skip numbers greater than 1000', ()=>{
+    expect(add("//;\n1;2;5;1006;7;8")).toBe(23)
 })
